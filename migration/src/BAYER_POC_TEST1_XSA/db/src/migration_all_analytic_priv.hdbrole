@@ -1,0 +1,11 @@
+{    "role":{
+        "name":"migration_all_analytic_priv",
+        "schema_analytic_privileges":[
+            {
+                "privileges": [
+                    "BAYER_POC_TEST1::migration_all_priv"
+                ]
+            }
+        ]
+    }
+}

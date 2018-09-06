@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="BAYER_POC_TEST1::AN_HANA_SALES" applyPrivilegeType="NONE" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" analyticViewCompatibilityMode="true" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" rowCounterName="row.count" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="AN_HANA_SALES"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="HA_SALES">
+      <resourceUri>BAYER_POC_TEST1.hana_academy::HA_SALES</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="YEARMONTH"/>
+        <viewAttribute id="CHANNEL_ID"/>
+        <viewAttribute id="CURRENCY"/>
+        <viewAttribute id="SALES_UNIT"/>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="CUSTOMER_SHIPPING"/>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="BILLED_QUANTITY"/>
+        <viewAttribute id="NET_SALES"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_SALES">
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANNEL_ID" source="CHANNEL_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALES_UNIT" source="SALES_UNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_SHIPPING" source="CUSTOMER_SHIPPING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY" source="BILLED_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES" source="NET_SALES"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection">
+    <descriptions/>
+    <attributes>
+      <attribute id="YEARMONTH" hidden="false" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="YEARMONTH"/>
+        <keyMapping columnObjectName="Projection" columnName="YEARMONTH"/>
+      </attribute>
+      <attribute id="CHANNEL_ID" hidden="false" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHANNEL_ID"/>
+        <keyMapping columnObjectName="Projection" columnName="CHANNEL_ID"/>
+      </attribute>
+      <attribute id="CURRENCY" hidden="false" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CURRENCY"/>
+        <keyMapping columnObjectName="Projection" columnName="CURRENCY"/>
+      </attribute>
+      <attribute id="SALES_UNIT" hidden="false" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SALES_UNIT"/>
+        <keyMapping columnObjectName="Projection" columnName="SALES_UNIT"/>
+      </attribute>
+      <attribute id="AREACODE_ID" hidden="false" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="AREACODE_ID"/>
+        <keyMapping columnObjectName="Projection" columnName="AREACODE_ID"/>
+      </attribute>
+      <attribute id="INDUSTRY_ID" hidden="false" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INDUSTRY_ID"/>
+        <keyMapping columnObjectName="Projection" columnName="INDUSTRY_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_SHIPPING" hidden="false" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_SHIPPING"/>
+        <keyMapping columnObjectName="Projection" columnName="CUSTOMER_SHIPPING"/>
+      </attribute>
+      <attribute id="PRODUCTGROUP_ID$local">
+        <descriptions defaultDescription="PRODUCTGROUP_ID"/>
+        <keyMapping columnObjectName="Projection" columnName="PRODUCTGROUP_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_ID$local">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping columnObjectName="Projection" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_ID$local">
+        <descriptions defaultDescription="CUSTOMER_ID"/>
+        <keyMapping columnObjectName="Projection" columnName="CUSTOMER_ID"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="BILLED_QUANTITY" hidden="false" order="3" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="BILLED_QUANTITY"/>
+        <measureMapping columnObjectName="Projection" columnName="BILLED_QUANTITY"/>
+      </measure>
+      <measure id="NET_SALES" hidden="false" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="NET_SALES"/>
+        <measureMapping columnObjectName="Projection" columnName="NET_SALES"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="BAYER_POC_TEST1::AV_HANA_PRODUCTGROUP">
+        <attributes>
+          <attributeRef>#PRODUCTGROUP_ID$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>PRODUCTGROUP_ID</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential" optimizeJoinColumns="false"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="BAYER_POC_TEST1::AV_HANA_PRODUCT">
+        <attributes>
+          <attributeRef>#PRODUCT_ID$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>PRODUCT_ID</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential" optimizeJoinColumns="false"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="AV_HANA_PRODUCT_PRODUCT_ID" attributeName="PRODUCT_ID"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="BAYER_POC_TEST1::AV_HANA_CUSTOMER">
+        <attributes>
+          <attributeRef>#CUSTOMER_ID$local</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>CUSTOMER_ID</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential" optimizeJoinColumns="false"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+    </sharedDimensions>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner/>
+        <rectangleSize/>
+      </shape>
+      <shape modelObjectName="Projection" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

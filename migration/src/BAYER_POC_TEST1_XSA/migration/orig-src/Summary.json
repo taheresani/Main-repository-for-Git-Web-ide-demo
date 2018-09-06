@@ -1,0 +1,93 @@
+[
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AV_BAYER_CUSTOMER.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AV_BAYER_CUSTOMER.attributeview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AV_BAYER_PRODUCT.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AV_BAYER_PRODUCT.attributeview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AV_BAYER_PRODUCTGROUP.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AV_BAYER_PRODUCTGROUP.attributeview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AV_HANA_CUSTOMER.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AV_HANA_CUSTOMER.attributeview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AV_HANA_PRODUCT.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AV_HANA_PRODUCT.attributeview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AV_HANA_PRODUCTGROUP.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AV_HANA_PRODUCTGROUP.attributeview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AN_BAYER_SALES.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AN_BAYER_SALES.analyticview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AN_HANA_SALES.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AN_HANA_SALES.analyticview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/CV_BAYER_PRODUCT.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/CV_BAYER_PRODUCT.calculationview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/CV_HANA_CUSTOMER.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/CV_HANA_CUSTOMER.calculationview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/CV_HANA_SALES.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/CV_HANA_SALES.calculationview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/CV_HANA_SALES_STAR.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/CV_HANA_SALES_STAR.calculationview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1\\TABLE_FUNCTION_CV_HANA_SQL.hdbtablefunction",
+      "BAYER_POC_TEST1/CV_HANA_SQL.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/CV_HANA_SQL.calculationview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/CV_UNION.calculationview"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/CV_UNION.calculationview"
+  },
+  {
+    "targetFiles": [
+      "BAYER_POC_TEST1/AP_CUSTOMER_DS104.analyticprivilege"
+    ],
+    "sourceFile": "BAYER_POC_TEST1/AP_CUSTOMER_DS104.analyticprivilege"
+  }
+]

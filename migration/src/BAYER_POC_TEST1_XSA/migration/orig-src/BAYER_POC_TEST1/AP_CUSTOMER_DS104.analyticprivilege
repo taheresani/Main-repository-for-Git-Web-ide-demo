@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Privilege:analyticPrivilege xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="AP_CUSTOMER_DS104" privilegeType="SQL_ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="AP_CUSTOMER_DS104"/>
+  <metadata changedAt="2018-08-20 18:55:53.443" createdAt="2018-08-20 18:54:29.187"/>
+  <securedModels allInformationModels="false">
+    <modelUri>/BAYER_POC_TEST1/calculationviews/CV_UNION</modelUri>
+  </securedModels>
+  <restriction logicalOperator="AND">
+    <filter xsi:type="Privilege:AttributeFilter" attributeName="CUSTOMER_ID">
+      <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="DS104"/>
+    </filter>
+    <originInformationModelUri>/BAYER_POC_TEST1/calculationviews/CV_UNION</originInformationModelUri>
+  </restriction>
+</Privilege:analyticPrivilege>

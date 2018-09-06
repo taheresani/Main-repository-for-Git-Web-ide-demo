@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AV_HANA_PRODUCTGROUP" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="PRODUCT GROUP"/>
+  <metadata changedAt="2018-08-13 18:06:33.286" createdAt="2018-08-13 18:06:33.286"/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <attributes>
+    <attribute id="PRODUCTGROUP_ID" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PRODUCTGROUP_ID"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_PRODUCT" columnName="PRODUCTGROUP_ID"/>
+    </attribute>
+    <attribute id="PRODUCT_ID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PRODUCT_ID"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_PRODUCT" columnName="PRODUCT_ID"/>
+    </attribute>
+    <attribute id="PRODUCTGROUP_TEXT" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PRODUCTGROUP_TEXT"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_TEXT" columnName="PRODUCTGROUP_TEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_PRODUCT"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_TEXT"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_PRODUCT"/>
+        <rightTable schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_TEXT"/>
+        <leftColumns>
+          <columnName>PRODUCTGROUP_ID</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PRODUCTGROUP_ID</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="HA_PRODUCTGROUP_PRODUCT" modelObjectNameSpace="HANA_ACADEMY" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="HA_PRODUCTGROUP_TEXT" modelObjectNameSpace="HANA_ACADEMY" modelObjectType="catalog">
+          <upperLeftCorner x="456" y="30"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

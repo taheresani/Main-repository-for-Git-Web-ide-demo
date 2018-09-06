@@ -1,0 +1,30 @@
+_schema-version: 2.0
+ID: BAYER_POC_TEST1_XSA
+description: bayerpoctest1xsa
+version: 0.0.0
+
+modules:
+  - name: BAYER_POC_TEST1_XSA-db
+    type: hdb
+    path: db
+    requires:
+      - name: BAYER_POC_TEST1_XSA-hdi
+        properties:
+            TARGET_CONTAINER: ~{service-name}
+      - name: bayer_poc-grantor
+      - name: hana_academy-grantor
+
+
+resources:
+  - name: BAYER_POC_TEST1_XSA-hdi
+    type: com.sap.xs.hdi-container
+    properties:
+        service-name: ${service-name}
+  - name: bayer_poc-grantor
+    type: org.cloudfoundry.existing-service
+    parameters:
+        service-name: bayer_poc-grantor
+  - name: hana_academy-grantor
+    type: org.cloudfoundry.existing-service
+    parameters:
+        service-name: hana_academy-grantor

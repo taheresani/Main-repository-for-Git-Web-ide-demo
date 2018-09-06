@@ -1,0 +1,11 @@
+{
+    "BAYER_POC_TEST1.hana_academy::HA_CUSTOMER_ATTR": {},
+    "BAYER_POC_TEST1.hana_academy::HA_CUSTOMER_TEXT": {},
+    "BAYER_POC_TEST1.hana_academy::HA_PRODUCT_ATTR": {},
+    "BAYER_POC_TEST1.hana_academy::HA_PRODUCT_TEXT": {},
+    "BAYER_POC_TEST1.hana_academy::HA_PRODUCTGROUP_PRODUCT": {},
+    "BAYER_POC_TEST1.hana_academy::HA_PRODUCTGROUP_TEXT": {},
+    "BAYER_POC_TEST1.hana_academy::HA_SALES": {},
+    "BAYER_POC_TEST1.hana_academy::HA_SALES_BUDGET": {},
+    "BAYER_POC_TEST1.hana_academy::HA_INDUSTRY_TEXT": {}
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="BAYER_POC_TEST1::migration_all_priv" privilegeType="SQL_ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="All privilege to access migrated views"/>
+  <securedModels>
+    <modelUri>BAYER_POC_TEST1::CV_HANA_SQL</modelUri>
+    <modelUri>BAYER_POC_TEST1::CV_UNION</modelUri>
+  </securedModels>
+  <whereSql></whereSql>
+</Privilege:analyticPrivilege>

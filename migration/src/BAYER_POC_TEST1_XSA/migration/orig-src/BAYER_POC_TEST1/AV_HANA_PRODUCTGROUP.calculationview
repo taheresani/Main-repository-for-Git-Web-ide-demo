@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="AV_HANA_PRODUCTGROUP" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" dimensionType="STANDARD" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="AV_HANA_PRODUCTGROUP"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="HA_PRODUCTGROUP_PRODUCT" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_PRODUCT"/>
+    </DataSource>
+    <DataSource id="HA_PRODUCTGROUP_TEXT" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="HANA_ACADEMY" columnObjectName="HA_PRODUCTGROUP_TEXT"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" centralTable="HA_PRODUCTGROUP_PRODUCT" dynamic="false" joinOrder="OUTSIDE_IN" joinType="referential" multiJoinNode="multiJoinNode" optimizeJoinColumns="false">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCTGROUP_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_PRODUCTGROUP_PRODUCT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+      </input>
+      <input node="#HA_PRODUCTGROUP_TEXT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_TEXT" source="PRODUCTGROUP_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+      </input>
+      <joinAttribute name="PRODUCTGROUP_ID"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="PRODUCTGROUP_ID" hidden="false" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTGROUP_ID"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCTGROUP_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_ID" hidden="false" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="PRODUCTGROUP_TEXT" hidden="false" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTGROUP_TEXT"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCTGROUP_TEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner/>
+        <rectangleSize/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

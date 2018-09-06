@@ -1,0 +1,62 @@
+{
+    "BAYER_POC_TEST1.bayer_poc::HA_CUSTOMER_ATTR": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_CUSTOMER_ATTR"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_CUSTOMER_TEXT": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_CUSTOMER_TEXT"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCT_ATTR": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_PRODUCT_ATTR"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCT_TEXT": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_PRODUCT_TEXT"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCTGROUP_PRODUCT": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_PRODUCTGROUP_PRODUCT"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCTGROUP_TEXT": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_PRODUCTGROUP_TEXT"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_SALES": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_SALES"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_SALES_BUDGET": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_SALES_BUDGET"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_AREA_TEXT": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_AREA_TEXT"
+        }
+    },
+    "BAYER_POC_TEST1.bayer_poc::HA_INDUSTRY_TEXT": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "HA_INDUSTRY_TEXT"
+        }
+    }
+}

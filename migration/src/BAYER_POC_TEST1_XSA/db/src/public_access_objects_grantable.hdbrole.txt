@@ -1,0 +1,125 @@
+{
+    "role": {
+        "name": "BAYER_POC_TEST1::PublicAccessObjects#",
+        "object_privileges": [
+            {
+                "name": "BAYER_POC_TEST1::AN_BAYER_SALES",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AN_HANA_SALES",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AV_BAYER_CUSTOMER",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AV_BAYER_PRODUCT",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AV_BAYER_PRODUCTGROUP",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AV_HANA_CUSTOMER",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AV_HANA_PRODUCT",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AV_HANA_PRODUCTGROUP",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::CV_BAYER_PRODUCT",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::CV_HANA_CUSTOMER",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::CV_HANA_SALES",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::CV_HANA_SALES_STAR",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::CV_HANA_SQL",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::CV_UNION",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::TABLE_FUNCTION_CV_HANA_SQL",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::AP_CUSTOMER_DS104",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "BAYER_POC_TEST1::TABLE_FUNCTION_CV_HANA_SQL",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            }
+        ]
+    }
+}

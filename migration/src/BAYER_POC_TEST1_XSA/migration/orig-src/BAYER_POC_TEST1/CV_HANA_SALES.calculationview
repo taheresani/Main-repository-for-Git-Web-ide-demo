@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="CV_HANA_SALES" applyPrivilegeType="NONE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="CV_HANA_SALES"/>
+  <metadata changedAt="2018-08-17 14:52:16.412"/>
+  <localVariables>
+    <variable id="IP_DISCOUNT" parameter="true">
+      <descriptions defaultDescription="IP_DISCOUNT"/>
+      <variableProperties datatype="DECIMAL" length="2" mandatory="false">
+        <valueDomain type="empty"/>
+        <selection multiLine="false" type="SingleValue"/>
+      </variableProperties>
+    </variable>
+  </localVariables>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="47"/>
+  <dataSources>
+    <DataSource id="AN_HANA_SALES" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/BAYER_POC_TEST1/analyticviews/AN_HANA_SALES</resourceUri>
+    </DataSource>
+    <DataSource id="HA_SALES_BUDGET" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="BAYER_POC" columnObjectName="HA_SALES_BUDGET"/>
+    </DataSource>
+    <DataSource id="HA_AREA_TEXT" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="BAYER_POC" columnObjectName="HA_AREA_TEXT"/>
+    </DataSource>
+    <DataSource id="HA_INDUSTRY_TEXT" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="BAYER_POC" columnObjectName="HA_INDUSTRY_TEXT"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="YEARMONTH"/>
+        <viewAttribute id="CHANNEL_ID"/>
+        <viewAttribute id="BILLED_QUANTITY"/>
+        <viewAttribute id="NET_SALES"/>
+        <viewAttribute id="CURRENCY"/>
+        <viewAttribute id="SALES_UNIT"/>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="CUSTOMER_SHIPPING"/>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="CUSTOMER_LAT"/>
+        <viewAttribute id="CUSTOMER_LONG"/>
+        <viewAttribute id="CUSTOMER_NATION"/>
+        <viewAttribute id="CUSTOMER_TEXT"/>
+        <viewAttribute id="CUSTOMER_CITY"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CUR"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="PRODUCT_TEXT"/>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="PRODUCTGROUP_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#AN_HANA_SALES">
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANNEL_ID" source="CHANNEL_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY" source="BILLED_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES" source="NET_SALES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALES_UNIT" source="SALES_UNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_SHIPPING" source="CUSTOMER_SHIPPING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LAT" source="CUSTOMER_LAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LONG" source="CUSTOMER_LONG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_NATION" source="CUSTOMER_NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_TEXT" source="CUSTOMER_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_CITY" source="CUSTOMER_CITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CUR" source="PRODUCT_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_TEXT" source="PRODUCT_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_TEXT" source="PRODUCTGROUP_TEXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="YEARMONTH"/>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="CHANNEL_ID"/>
+        <viewAttribute id="BILLED_QUANTITY"/>
+        <viewAttribute id="NET_SALES"/>
+        <viewAttribute id="CURRENCY"/>
+        <viewAttribute id="SALES_UNIT"/>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="BILLED_QUANTITY_BUDGET"/>
+        <viewAttribute id="NET_SALES_BUDGET"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_SALES_BUDGET">
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANNEL_ID" source="CHANNEL_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY" source="BILLED_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES" source="NET_SALES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALES_UNIT" source="SALES_UNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY_BUDGET" source="BILLED_QUANTITY_BUDGET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES_BUDGET" source="NET_SALES_BUDGET"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="YEARMONTH"/>
+        <viewAttribute id="CHANNEL_ID"/>
+        <viewAttribute id="BILLED_QUANTITY"/>
+        <viewAttribute id="NET_SALES"/>
+        <viewAttribute id="CURRENCY"/>
+        <viewAttribute id="SALES_UNIT"/>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="CUSTOMER_SHIPPING"/>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="CUSTOMER_LAT"/>
+        <viewAttribute id="CUSTOMER_LONG"/>
+        <viewAttribute id="CUSTOMER_NATION"/>
+        <viewAttribute id="CUSTOMER_TEXT"/>
+        <viewAttribute id="CUSTOMER_CITY"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CUR"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="PRODUCT_TEXT"/>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="PRODUCTGROUP_TEXT"/>
+        <viewAttribute id="BILLED_QUANTITY_BUDGET"/>
+        <viewAttribute id="NET_SALES_BUDGET"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANNEL_ID" source="CHANNEL_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY" source="BILLED_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES" source="NET_SALES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALES_UNIT" source="SALES_UNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_SHIPPING" source="CUSTOMER_SHIPPING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LAT" source="CUSTOMER_LAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LONG" source="CUSTOMER_LONG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_NATION" source="CUSTOMER_NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_TEXT" source="CUSTOMER_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_CITY" source="CUSTOMER_CITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CUR" source="PRODUCT_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_TEXT" source="PRODUCT_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_TEXT" source="PRODUCTGROUP_TEXT"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY_BUDGET" source="BILLED_QUANTITY_BUDGET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES_BUDGET" source="NET_SALES_BUDGET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+      </input>
+      <joinAttribute name="YEARMONTH"/>
+      <joinAttribute name="PRODUCT_ID"/>
+      <joinAttribute name="CUSTOMER_ID"/>
+      <joinAttribute name="AREACODE_ID"/>
+      <joinAttribute name="INDUSTRY_ID"/>
+      <joinAttribute name="PRODUCTGROUP_ID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="AREACODE_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_AREA_TEXT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_TEXT" source="AREACODE_TEXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="leftOuter">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="YEARMONTH"/>
+        <viewAttribute id="CHANNEL_ID"/>
+        <viewAttribute id="BILLED_QUANTITY"/>
+        <viewAttribute id="NET_SALES"/>
+        <viewAttribute id="CURRENCY"/>
+        <viewAttribute id="SALES_UNIT"/>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="CUSTOMER_SHIPPING"/>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="CUSTOMER_LAT"/>
+        <viewAttribute id="CUSTOMER_LONG"/>
+        <viewAttribute id="CUSTOMER_NATION"/>
+        <viewAttribute id="CUSTOMER_TEXT"/>
+        <viewAttribute id="CUSTOMER_CITY"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CUR"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="PRODUCT_TEXT"/>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="PRODUCTGROUP_TEXT"/>
+        <viewAttribute id="BILLED_QUANTITY_BUDGET"/>
+        <viewAttribute id="NET_SALES_BUDGET"/>
+        <viewAttribute id="AREACODE_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANNEL_ID" source="CHANNEL_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY" source="BILLED_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES" source="NET_SALES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALES_UNIT" source="SALES_UNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_SHIPPING" source="CUSTOMER_SHIPPING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LAT" source="CUSTOMER_LAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LONG" source="CUSTOMER_LONG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_NATION" source="CUSTOMER_NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_TEXT" source="CUSTOMER_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_CITY" source="CUSTOMER_CITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CUR" source="PRODUCT_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_TEXT" source="PRODUCT_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_TEXT" source="PRODUCTGROUP_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY_BUDGET" source="BILLED_QUANTITY_BUDGET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES_BUDGET" source="NET_SALES_BUDGET"/>
+      </input>
+      <input node="#Projection_3">
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_TEXT" source="AREACODE_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+      </input>
+      <joinAttribute name="AREACODE_ID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="INDUSTRY_LANGU"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="INDUSTRY_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_INDUSTRY_TEXT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_LANGU" source="INDUSTRY_LANGU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_TEXT" source="INDUSTRY_TEXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="textTable" languageColumn="INDUSTRY_LANGU">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="YEARMONTH"/>
+        <viewAttribute id="CHANNEL_ID"/>
+        <viewAttribute id="BILLED_QUANTITY"/>
+        <viewAttribute id="NET_SALES"/>
+        <viewAttribute id="CURRENCY"/>
+        <viewAttribute id="SALES_UNIT"/>
+        <viewAttribute id="AREACODE_ID"/>
+        <viewAttribute id="INDUSTRY_ID"/>
+        <viewAttribute id="CUSTOMER_SHIPPING"/>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="CUSTOMER_LAT"/>
+        <viewAttribute id="CUSTOMER_LONG"/>
+        <viewAttribute id="CUSTOMER_NATION"/>
+        <viewAttribute id="CUSTOMER_TEXT"/>
+        <viewAttribute id="CUSTOMER_CITY"/>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CUR"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="PRODUCT_TEXT"/>
+        <viewAttribute id="PRODUCTGROUP_ID"/>
+        <viewAttribute id="PRODUCTGROUP_TEXT"/>
+        <viewAttribute id="BILLED_QUANTITY_BUDGET"/>
+        <viewAttribute id="NET_SALES_BUDGET"/>
+        <viewAttribute id="AREACODE_TEXT"/>
+        <viewAttribute id="INDUSTRY_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH" source="YEARMONTH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHANNEL_ID" source="CHANNEL_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY" source="BILLED_QUANTITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES" source="NET_SALES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SALES_UNIT" source="SALES_UNIT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_ID" source="AREACODE_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_SHIPPING" source="CUSTOMER_SHIPPING"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LAT" source="CUSTOMER_LAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LONG" source="CUSTOMER_LONG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_NATION" source="CUSTOMER_NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_TEXT" source="CUSTOMER_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_CITY" source="CUSTOMER_CITY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CUR" source="PRODUCT_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_TEXT" source="PRODUCT_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_ID" source="PRODUCTGROUP_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTGROUP_TEXT" source="PRODUCTGROUP_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BILLED_QUANTITY_BUDGET" source="BILLED_QUANTITY_BUDGET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NET_SALES_BUDGET" source="NET_SALES_BUDGET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AREACODE_TEXT" source="AREACODE_TEXT"/>
+      </input>
+      <input node="#Projection_4">
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_TEXT" source="INDUSTRY_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INDUSTRY_ID" source="INDUSTRY_ID"/>
+      </input>
+      <joinAttribute name="INDUSTRY_ID"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_3">
+    <descriptions/>
+    <attributes>
+      <attribute id="YEARMONTH" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="YEARMONTH"/>
+        <keyMapping columnObjectName="Join_3" columnName="YEARMONTH"/>
+      </attribute>
+      <attribute id="CHANNEL_ID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHANNEL_ID"/>
+        <keyMapping columnObjectName="Join_3" columnName="CHANNEL_ID"/>
+      </attribute>
+      <attribute id="CURRENCY" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CURRENCY"/>
+        <keyMapping columnObjectName="Join_3" columnName="CURRENCY"/>
+      </attribute>
+      <attribute id="SALES_UNIT" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SALES_UNIT"/>
+        <keyMapping columnObjectName="Join_3" columnName="SALES_UNIT"/>
+      </attribute>
+      <attribute id="AREACODE_ID" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="AREACODE_ID"/>
+        <keyMapping columnObjectName="Join_3" columnName="AREACODE_ID"/>
+      </attribute>
+      <attribute id="INDUSTRY_ID" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INDUSTRY_ID"/>
+        <keyMapping columnObjectName="Join_3" columnName="INDUSTRY_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_SHIPPING" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_SHIPPING"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_SHIPPING"/>
+      </attribute>
+      <attribute id="CUSTOMER_ID" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_ID"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_LAT" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_LAT"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_LAT"/>
+      </attribute>
+      <attribute id="CUSTOMER_LONG" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_LONG"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_LONG"/>
+      </attribute>
+      <attribute id="CUSTOMER_NATION" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_NATION"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_NATION"/>
+      </attribute>
+      <attribute id="CUSTOMER_TEXT" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_TEXT"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_TEXT"/>
+      </attribute>
+      <attribute id="CUSTOMER_CITY" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_CITY"/>
+        <keyMapping columnObjectName="Join_3" columnName="CUSTOMER_CITY"/>
+      </attribute>
+      <attribute id="PRODUCT_ID" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping columnObjectName="Join_3" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_CUR" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_CUR"/>
+        <keyMapping columnObjectName="Join_3" columnName="PRODUCT_CUR"/>
+      </attribute>
+      <attribute id="PRODUCT_PRICE" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_PRICE"/>
+        <keyMapping columnObjectName="Join_3" columnName="PRODUCT_PRICE"/>
+      </attribute>
+      <attribute id="PRODUCT_TEXT" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_TEXT"/>
+        <keyMapping columnObjectName="Join_3" columnName="PRODUCT_TEXT"/>
+      </attribute>
+      <attribute id="PRODUCTGROUP_ID" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTGROUP_ID"/>
+        <keyMapping columnObjectName="Join_3" columnName="PRODUCTGROUP_ID"/>
+      </attribute>
+      <attribute id="PRODUCTGROUP_TEXT" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTGROUP_TEXT"/>
+        <keyMapping columnObjectName="Join_3" columnName="PRODUCTGROUP_TEXT"/>
+      </attribute>
+      <attribute id="AREACODE_TEXT" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="AREACODE_TEXT"/>
+        <keyMapping columnObjectName="Join_3" columnName="AREACODE_TEXT"/>
+      </attribute>
+      <attribute id="INDUSTRY_TEXT" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INDUSTRY_TEXT"/>
+        <keyMapping columnObjectName="Join_3" columnName="INDUSTRY_TEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes>
+      <calculatedAttribute id="Discount" hidden="false" order="26" semanticType="empty" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Discount"/>
+        <keyCalculation datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+          <formula>(&quot;NET_SALES&quot;*$$IP_DISCOUNT$$)/100</formula>
+        </keyCalculation>
+      </calculatedAttribute>
+    </calculatedAttributes>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="BILLED_QUANTITY" order="3" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="BILLED_QUANTITY"/>
+        <measureMapping columnObjectName="Join_3" columnName="BILLED_QUANTITY"/>
+      </measure>
+      <measure id="NET_SALES" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="NET_SALES"/>
+        <measureMapping columnObjectName="Join_3" columnName="NET_SALES"/>
+      </measure>
+      <measure id="BILLED_QUANTITY_BUDGET" order="22" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="BILLED_QUANTITY_BUDGET"/>
+        <measureMapping columnObjectName="Join_3" columnName="BILLED_QUANTITY_BUDGET"/>
+      </measure>
+      <measure id="NET_SALES_BUDGET" order="23" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="NET_SALES_BUDGET"/>
+        <measureMapping columnObjectName="Join_3" columnName="NET_SALES_BUDGET"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="453"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="357"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="261"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="165"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="BAYER_POC_TEST1::CV_HANA_SQL" applyPrivilegeType="SQL_ANALYTIC_PRIVILEGE" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection" scriptParametersCaseSensitive="true" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="CV_HANA_SQL"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="TABLE_FUNCTION_CV_HANA_SQL" type="TABLE_FUNCTION">
+      <resourceUri>BAYER_POC_TEST1::TABLE_FUNCTION_CV_HANA_SQL</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="TABLE_FUNCTION_CV_HANA_SQL">
+    <descriptions/>
+    <attributes>
+      <attribute id="YEARMONTH" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="YEARMONTH"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="YEARMONTH"/>
+      </attribute>
+      <attribute id="CUSTOMER_ID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_ID"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="CUSTOMER_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_ID" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="PRODUCTGROUP_ID" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTGROUP_ID"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="PRODUCTGROUP_ID"/>
+      </attribute>
+      <attribute id="CHANNEL_ID" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHANNEL_ID"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="CHANNEL_ID"/>
+      </attribute>
+      <attribute id="INDUSTRY_ID" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INDUSTRY_ID"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="INDUSTRY_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_SHIPPING" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_SHIPPING"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="CUSTOMER_SHIPPING"/>
+      </attribute>
+      <attribute id="INDUSTRY_TEXT" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INDUSTRY_TEXT"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="INDUSTRY_TEXT"/>
+      </attribute>
+      <attribute id="CUSTOMER_NATION" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_NATION"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="CUSTOMER_NATION"/>
+      </attribute>
+      <attribute id="CUSTOMER_CITY" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_CITY"/>
+        <keyMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="CUSTOMER_CITY"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="BILLED_QUANTITY" order="6" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="BILLED_QUANTITY"/>
+        <measureMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="BILLED_QUANTITY"/>
+      </measure>
+      <measure id="NET_SALES" order="7" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="NET_SALES"/>
+        <measureMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="NET_SALES"/>
+      </measure>
+      <measure id="BILLED_QUANTITY_BUDGET" order="10" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="BILLED_QUANTITY_BUDGET"/>
+        <measureMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="BILLED_QUANTITY_BUDGET"/>
+      </measure>
+      <measure id="NET_SALES_BUDGET" order="11" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="NET_SALES_BUDGET"/>
+        <measureMapping columnObjectName="TABLE_FUNCTION_CV_HANA_SQL" columnName="NET_SALES_BUDGET"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

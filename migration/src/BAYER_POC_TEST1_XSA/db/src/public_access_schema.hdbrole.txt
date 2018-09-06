@@ -1,0 +1,13 @@
+{
+    "role": {
+        "name": "BAYER_POC_TEST1::PublicAccessSchema",
+        "schema_privileges": [
+            {
+                "privileges": [
+                    "SELECT",
+                    "EXECUTE"
+                ]
+            }
+        ]
+    }
+}

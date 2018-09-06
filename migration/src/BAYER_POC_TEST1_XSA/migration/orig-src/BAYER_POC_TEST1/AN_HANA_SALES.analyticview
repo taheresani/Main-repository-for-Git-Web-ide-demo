@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cube:cube xmlns:Cube="http://www.sap.com/ndb/BiModelCube.ecore" schemaVersion="1.5" id="AN_HANA_SALES" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled">
+  <origin/>
+  <descriptions defaultDescription="AN_SALES"/>
+  <metadata changedAt="2018-08-17 14:45:29.442"/>
+  <localVariables/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <privateMeasureGroup id="MeasureGroup">
+    <attributes>
+      <attribute id="YEARMONTH" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="YEARMONTH"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="YEARMONTH"/>
+      </attribute>
+      <attribute id="CHANNEL_ID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHANNEL_ID"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="CHANNEL_ID"/>
+      </attribute>
+      <attribute id="CURRENCY" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CURRENCY"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="CURRENCY"/>
+      </attribute>
+      <attribute id="SALES_UNIT" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SALES_UNIT"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="SALES_UNIT"/>
+      </attribute>
+      <attribute id="AREACODE_ID" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="AREACODE_ID"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="AREACODE_ID"/>
+      </attribute>
+      <attribute id="INDUSTRY_ID" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INDUSTRY_ID"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="INDUSTRY_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_SHIPPING" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_SHIPPING"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="CUSTOMER_SHIPPING"/>
+      </attribute>
+      <attribute id="PRODUCTGROUP_ID" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTGROUP_ID"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="PRODUCTGROUP_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_ID" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_ID" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_ID"/>
+        <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="CUSTOMER_ID"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies>
+        <tableProxy centralTable="true">
+          <table schemaName="HANA_ACADEMY" columnObjectName="HA_SALES"/>
+        </tableProxy>
+      </tableProxies>
+      <joins/>
+      <layout>
+        <shapes>
+          <shape modelObjectName="HA_SALES" modelObjectNameSpace="HANA_ACADEMY" modelObjectType="catalog">
+            <upperLeftCorner x="70" y="30"/>
+          </shape>
+        </shapes>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="BILLED_QUANTITY" order="3" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="BILLED_QUANTITY"/>
+        <measureMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="BILLED_QUANTITY"/>
+      </measure>
+      <measure id="NET_SALES" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="NET_SALES"/>
+        <measureMapping schemaName="HANA_ACADEMY" columnObjectName="HA_SALES" columnName="NET_SALES"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="/BAYER_POC_TEST1/attributeviews/AV_HANA_PRODUCTGROUP">
+        <attributes>
+          <attributeRef>#PRODUCTGROUP_ID</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>PRODUCTGROUP_ID</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/BAYER_POC_TEST1/attributeviews/AV_HANA_PRODUCT">
+        <attributes>
+          <attributeRef>#PRODUCT_ID</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>PRODUCT_ID</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="AV_HANA_PRODUCT_PRODUCT_ID" attributeName="PRODUCT_ID"/>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/BAYER_POC_TEST1/attributeviews/AV_HANA_CUSTOMER">
+        <attributes>
+          <attributeRef>#CUSTOMER_ID</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>CUSTOMER_ID</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+    </sharedDimensions>
+    <layout>
+      <shapes>
+        <shape modelObjectName="MEASURE_GROUP" modelObjectType="repository">
+          <upperLeftCorner x="192" y="128"/>
+        </shape>
+        <shape modelObjectName="/BAYER_POC_TEST1/attributeviews/AV_HANA_PRODUCTGROUP" modelObjectType="repository">
+          <upperLeftCorner x="735" y="283"/>
+        </shape>
+        <shape modelObjectName="/BAYER_POC_TEST1/attributeviews/AV_HANA_PRODUCT" modelObjectType="repository">
+          <upperLeftCorner x="838" y="382"/>
+        </shape>
+        <shape modelObjectName="/BAYER_POC_TEST1/attributeviews/AV_HANA_CUSTOMER" modelObjectType="repository">
+          <upperLeftCorner x="1175" y="187"/>
+        </shape>
+        <shape modelObjectName="LogicalView" modelObjectNameSpace="MeasureGroup" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize height="0" width="0"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateMeasureGroup>
+</Cube:cube>

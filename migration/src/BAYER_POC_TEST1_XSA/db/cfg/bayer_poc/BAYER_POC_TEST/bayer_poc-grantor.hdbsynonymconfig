@@ -1,0 +1,8 @@
+{
+    "BAYER_POC_TEST1.bayer_poc.BAYER_POC_TEST::HANA_TEST": {
+        "target": {
+            "*.configure": "bayer_poc-grantor",
+            "object": "BAYER_POC_TEST::HANA_TEST"
+        }
+    }
+}

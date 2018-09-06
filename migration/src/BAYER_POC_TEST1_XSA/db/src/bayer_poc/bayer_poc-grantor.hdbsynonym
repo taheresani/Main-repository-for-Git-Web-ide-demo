@@ -1,0 +1,12 @@
+{
+    "BAYER_POC_TEST1.bayer_poc::HA_CUSTOMER_ATTR": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_CUSTOMER_TEXT": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCT_ATTR": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCT_TEXT": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCTGROUP_PRODUCT": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_PRODUCTGROUP_TEXT": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_SALES": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_SALES_BUDGET": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_AREA_TEXT": {},
+    "BAYER_POC_TEST1.bayer_poc::HA_INDUSTRY_TEXT": {}
+}

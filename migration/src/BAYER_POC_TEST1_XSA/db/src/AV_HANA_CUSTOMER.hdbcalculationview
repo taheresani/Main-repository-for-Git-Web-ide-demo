@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="BAYER_POC_TEST1::AV_HANA_CUSTOMER" applyPrivilegeType="NONE" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="DIMENSION" dimensionType="STANDARD" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="AV_HANA_CUSTOMER"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="HA_CUSTOMER_ATTR">
+      <resourceUri>BAYER_POC_TEST1.hana_academy::HA_CUSTOMER_ATTR</resourceUri>
+    </DataSource>
+    <DataSource id="HA_CUSTOMER_TEXT">
+      <resourceUri>BAYER_POC_TEST1.hana_academy::HA_CUSTOMER_TEXT</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" centralTable="HA_CUSTOMER_ATTR" dynamic="false" joinOrder="OUTSIDE_IN" joinType="referential" multiJoinNode="multiJoinNode" optimizeJoinColumns="false">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="CUSTOMER_ID"/>
+        <viewAttribute id="CUSTOMER_LAT"/>
+        <viewAttribute id="CUSTOMER_LONG"/>
+        <viewAttribute id="CUSTOMER_NATION"/>
+        <viewAttribute id="CUSTOMER_CITY"/>
+        <viewAttribute id="CUSTOMER_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_CUSTOMER_ATTR">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LAT" source="CUSTOMER_LAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_LONG" source="CUSTOMER_LONG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_NATION" source="CUSTOMER_NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_CITY" source="CUSTOMER_CITY"/>
+      </input>
+      <input node="#HA_CUSTOMER_TEXT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_TEXT" source="CUSTOMER_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+      </input>
+      <joinAttribute name="CUSTOMER_ID"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="CUSTOMER_ID" hidden="false" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_ID"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUSTOMER_ID"/>
+      </attribute>
+      <attribute id="CUSTOMER_LAT" hidden="false" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_LAT"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUSTOMER_LAT"/>
+      </attribute>
+      <attribute id="CUSTOMER_LONG" hidden="false" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_LONG"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUSTOMER_LONG"/>
+      </attribute>
+      <attribute id="CUSTOMER_NATION" hidden="false" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_NATION"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUSTOMER_NATION"/>
+      </attribute>
+      <attribute id="CUSTOMER_TEXT" hidden="false" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_TEXT"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUSTOMER_TEXT"/>
+      </attribute>
+      <attribute id="CUSTOMER_CITY" hidden="false" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_CITY"/>
+        <keyMapping columnObjectName="Join_1" columnName="CUSTOMER_CITY"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner/>
+        <rectangleSize/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

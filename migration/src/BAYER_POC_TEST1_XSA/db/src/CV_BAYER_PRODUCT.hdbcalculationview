@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="BAYER_POC_TEST1::CV_BAYER_PRODUCT" applyPrivilegeType="NONE" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="CV_BAYER_PRODUCT"/>
+  <metadata changedAt="2018-08-13 18:10:39.156" createdAt="2018-08-13 18:10:39.155"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="HA_PRODUCT_ATTR">
+      <resourceUri>BAYER_POC_TEST1.bayer_poc::HA_PRODUCT_ATTR</resourceUri>
+    </DataSource>
+    <DataSource id="HA_PRODUCT_TEXT">
+      <resourceUri>BAYER_POC_TEST1.bayer_poc::HA_PRODUCT_TEXT</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CUR"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_PRODUCT_ATTR">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CUR" source="PRODUCT_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#HA_PRODUCT_TEXT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_TEXT" source="PRODUCT_TEXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+      <descriptions/>
+      <viewAttributes>
+        <viewAttribute id="PRODUCT_ID"/>
+        <viewAttribute id="PRODUCT_CUR"/>
+        <viewAttribute id="PRODUCT_PRICE"/>
+        <viewAttribute id="PRODUCT_TEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_CUR" source="PRODUCT_CUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_PRICE" source="PRODUCT_PRICE"/>
+      </input>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_TEXT" source="PRODUCT_TEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+      </input>
+      <joinAttribute name="PRODUCT_ID"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <descriptions defaultDescription="CV_BAYER_PRODUCT"/>
+    <attributes>
+      <attribute id="PRODUCT_ID" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCT_ID"/>
+      </attribute>
+      <attribute id="PRODUCT_CUR" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_CUR"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCT_CUR"/>
+      </attribute>
+      <attribute id="PRODUCT_PRICE" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_PRICE"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCT_PRICE"/>
+      </attribute>
+      <attribute id="PRODUCT_TEXT" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_TEXT"/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODUCT_TEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="60" y="280"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="190" y="280"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="140" y="180"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

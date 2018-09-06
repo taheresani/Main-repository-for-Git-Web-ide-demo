@@ -1,0 +1,120 @@
+{
+    "hana_academy-grantor": {
+        "object_owner": {
+            "object_privileges": [
+                {
+                    "name": "HA_CUSTOMER_ATTR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_CUSTOMER_TEXT",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCT_ATTR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCT_TEXT",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCTGROUP_PRODUCT",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCTGROUP_TEXT",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_SALES",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_SALES_BUDGET",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_INDUSTRY_TEXT",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                }
+            ]
+        },
+        "application_user": {
+            "object_privileges": [
+                {
+                    "name": "HA_CUSTOMER_ATTR",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_CUSTOMER_TEXT",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCT_ATTR",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCT_TEXT",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCTGROUP_PRODUCT",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_PRODUCTGROUP_TEXT",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_SALES",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_SALES_BUDGET",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "HA_INDUSTRY_TEXT",
+                    "privileges": [
+                        "SELECT"
+                    ]
+                }
+            ]
+        }
+    }
+}

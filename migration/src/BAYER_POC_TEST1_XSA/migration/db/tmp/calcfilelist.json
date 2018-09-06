@@ -1,0 +1,17 @@
+[
+    "./BAYER_POC_TEST1/AP_CUSTOMER_DS104.analyticprivilege",
+    "./BAYER_POC_TEST1/AV_BAYER_CUSTOMER.calculationview",
+    "./BAYER_POC_TEST1/AV_BAYER_PRODUCT.calculationview",
+    "./BAYER_POC_TEST1/AV_BAYER_PRODUCTGROUP.calculationview",
+    "./BAYER_POC_TEST1/AV_HANA_CUSTOMER.calculationview",
+    "./BAYER_POC_TEST1/AV_HANA_PRODUCT.calculationview",
+    "./BAYER_POC_TEST1/AV_HANA_PRODUCTGROUP.calculationview",
+    "./BAYER_POC_TEST1/AN_BAYER_SALES.calculationview",
+    "./BAYER_POC_TEST1/AN_HANA_SALES.calculationview",
+    "./BAYER_POC_TEST1/CV_BAYER_PRODUCT.calculationview",
+    "./BAYER_POC_TEST1/CV_HANA_CUSTOMER.calculationview",
+    "./BAYER_POC_TEST1/CV_HANA_SALES.calculationview",
+    "./BAYER_POC_TEST1/CV_HANA_SALES_STAR.calculationview",
+    "./BAYER_POC_TEST1/CV_HANA_SQL.calculationview",
+    "./BAYER_POC_TEST1/CV_UNION.calculationview"
+]

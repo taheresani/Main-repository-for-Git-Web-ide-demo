@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AV_HANA_CUSTOMER" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="HANA CUSTOMER DATA"/>
+  <metadata changedAt="2018-08-13 18:07:41.994" createdAt="2018-08-13 18:07:41.993"/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <attributes>
+    <attribute id="CUSTOMER_ID" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER_ID"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR" columnName="CUSTOMER_ID"/>
+    </attribute>
+    <attribute id="CUSTOMER_LAT" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER_LAT"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR" columnName="CUSTOMER_LAT"/>
+    </attribute>
+    <attribute id="CUSTOMER_LONG" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER_LONG"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR" columnName="CUSTOMER_LONG"/>
+    </attribute>
+    <attribute id="CUSTOMER_NATION" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER_NATION"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR" columnName="CUSTOMER_NATION"/>
+    </attribute>
+    <attribute id="CUSTOMER_TEXT" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER_TEXT"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_TEXT" columnName="CUSTOMER_TEXT"/>
+    </attribute>
+    <attribute id="CUSTOMER_CITY" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER_CITY"/>
+      <keyMapping schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR" columnName="CUSTOMER_CITY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_TEXT"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_ATTR"/>
+        <rightTable schemaName="HANA_ACADEMY" columnObjectName="HA_CUSTOMER_TEXT"/>
+        <leftColumns>
+          <columnName>CUSTOMER_ID</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>CUSTOMER_ID</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="HA_CUSTOMER_ATTR" modelObjectNameSpace="HANA_ACADEMY" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="HA_CUSTOMER_TEXT" modelObjectNameSpace="HANA_ACADEMY" modelObjectType="catalog">
+          <upperLeftCorner x="396" y="30"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

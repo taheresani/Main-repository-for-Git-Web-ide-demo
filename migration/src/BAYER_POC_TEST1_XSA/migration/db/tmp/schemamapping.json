@@ -1,0 +1,44 @@
+{
+    "schemaMapping": [
+        {
+            "AUTHORING_SCHEMA": "SAP_ECC",
+            "PHYSICAL_SCHEMA": "ID5_HAN"
+        },
+        {
+            "AUTHORING_SCHEMA": "POC_AIRBUS",
+            "PHYSICAL_SCHEMA": "POC_AIRBUS_SLT"
+        },
+        {
+            "AUTHORING_SCHEMA": "dc_sysbi",
+            "PHYSICAL_SCHEMA": "_SYS_BI"
+        },
+        {
+            "AUTHORING_SCHEMA": "TEST_SCHEMA",
+            "PHYSICAL_SCHEMA": "TRNG20"
+        },
+        {
+            "AUTHORING_SCHEMA": "HANA_ERP_V4",
+            "PHYSICAL_SCHEMA": "ID5_HAN"
+        },
+        {
+            "AUTHORING_SCHEMA": "SAP_RAJ",
+            "PHYSICAL_SCHEMA": "RDHAVAL"
+        },
+        {
+            "AUTHORING_SCHEMA": "SAP_ERP_V4",
+            "PHYSICAL_SCHEMA": "ID5_HAN"
+        },
+        {
+            "AUTHORING_SCHEMA": "SAP_ECCPA",
+            "PHYSICAL_SCHEMA": "ID5_HAN"
+        },
+        {
+            "AUTHORING_SCHEMA": "SAP_ERP_PA",
+            "PHYSICAL_SCHEMA": "ID5_HAN"
+        },
+        {
+            "AUTHORING_SCHEMA": "ABAP",
+            "PHYSICAL_SCHEMA": "ID5_HAN"
+        }
+    ]
+}
